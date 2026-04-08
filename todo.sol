@@ -11,7 +11,7 @@ contract Todo{
     mapping(address=>Task[]) public myTasks;
     event TaskAdded(address indexed user, string text);
     event TaskToggled(address indexed user, uint256 index, bool completed);
-    event TaskDeleted(address indexed user, uint256);
+    event TaskDeleted(address indexed user, uint256 index);
 
     modifier validIndex(uint256 index){
     require(index < myTasks[msg.sender].length, "Index does not exist");
